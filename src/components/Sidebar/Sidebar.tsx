@@ -7,16 +7,14 @@ import { NavigationItem, NavigationItemProps } from './NavigationItem';
 import { usePathname } from 'next/navigation';
 import { classNames } from '@/features/classNames';
 
-const navigationItemPropsList: Omit<
-  NavigationItemProps,
-  'isCurrent' | 'isOpen'
->[] = [
-  {
-    Icon: HomeIcon,
-    text: 'Home',
-    href: '/',
-  },
-];
+const navigationItemsData: Omit<NavigationItemProps, 'isCurrent' | 'isOpen'>[] =
+  [
+    {
+      Icon: HomeIcon,
+      text: 'Home',
+      href: '/',
+    },
+  ];
 
 export const Sidebar = () => {
   const pathname = usePathname();
@@ -49,7 +47,7 @@ export const Sidebar = () => {
           />
         </div>
         <ul className={'mt-64'}>
-          {navigationItemPropsList.map(({ href, ...navigationItemProps }) => (
+          {navigationItemsData.map(({ href, ...navigationItemProps }) => (
             <NavigationItem
               key={href}
               {...{ href, ...navigationItemProps, isOpen }}
