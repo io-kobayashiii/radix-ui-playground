@@ -18,11 +18,7 @@ const navigationItemPropsList: Omit<
   },
 ];
 
-type Props = {
-  //
-};
-
-export const Sidebar: FC<Props> = () => {
+export const Sidebar = () => {
   const pathname = usePathname();
   const { isOpen, isPermanentlyOpen, isTemporarilyOpen } = useSidebarState();
   const { mutateInHover } = useSidebarRecoilMutator();

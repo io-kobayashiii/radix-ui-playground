@@ -13,13 +13,13 @@ export type NavigationItemProps = {
   href: string;
 };
 
-export const NavigationItem: FC<NavigationItemProps> = ({
+export const NavigationItem = ({
   isOpen,
   isCurrent,
   Icon,
   text,
   href,
-}) => {
+}: NavigationItemProps) => {
   return (
     <>
       <li
