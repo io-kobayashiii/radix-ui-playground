@@ -1,6 +1,6 @@
 'use client';
 
-import { HomeIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
+import { HomeIcon, GitHubLogoIcon, InputIcon } from '@radix-ui/react-icons';
 import React, { FC } from 'react';
 import { useSidebarRecoilMutator, useSidebarState } from '@/recoil/sidebar';
 import { NavigationItem, NavigationItemProps } from './NavigationItem';
@@ -13,6 +13,11 @@ const navigationItemsData: Omit<NavigationItemProps, 'isCurrent' | 'isOpen'>[] =
       Icon: HomeIcon,
       text: 'Home',
       href: '/',
+    },
+    {
+      Icon: InputIcon,
+      text: 'Form Parts',
+      href: '/form-parts',
     },
   ];
 
@@ -47,13 +52,18 @@ export const Sidebar = () => {
           />
         </div>
         <ul className={'mt-64'}>
-          {navigationItemsData.map(({ href, ...navigationItemProps }) => (
-            <NavigationItem
-              key={href}
-              {...{ href, ...navigationItemProps, isOpen }}
-              isCurrent={pathname.startsWith(href)}
-            />
-          ))}
+          {navigationItemsData.map(
+            ({ href, ...navigationItemProps }, index) => (
+              <NavigationItem
+                key={href}
+                {...{ href, isOpen, ...navigationItemProps }}
+                isCurrent={
+                  href === '/' ? href === pathname : pathname.startsWith(href)
+                }
+                className={index ? 'mt-8' : ''}
+              />
+            ),
+          )}
         </ul>
       </div>
     </nav>

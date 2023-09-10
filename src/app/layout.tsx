@@ -27,7 +27,7 @@ const RootLayout = ({ children }: Props) => {
           rel="stylesheet"
         />
       </head>
-      <body className="bg-gray-200 h-100p">
+      <body className="bg-gray-100 h-100p">
         <RecoilRootProvider>
           <Theme className="flex h-100p">
             <Sidebar />
