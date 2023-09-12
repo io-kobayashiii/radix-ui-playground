@@ -29,7 +29,7 @@ export const Sidebar = () => {
   return (
     <nav
       className={classNames(
-        'relative w-100 h-100p duration-300 ease-in-out',
+        'w-100 h-100vh duration-300 ease-in-out sticky top-0',
         isPermanentlyOpen ? 'w-256' : 'w-100',
       )}
       onMouseEnter={() => !isPermanentlyOpen && mutateInHover(true)}

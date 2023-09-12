@@ -17,7 +17,7 @@ type Props = {
 
 const RootLayout = ({ children }: Props) => {
   return (
-    <html lang="jp" className="h-100p">
+    <html lang="jp">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -27,9 +27,9 @@ const RootLayout = ({ children }: Props) => {
           rel="stylesheet"
         />
       </head>
-      <body className="bg-gray-100 h-100p">
+      <body className="bg-gray-100">
         <RecoilRootProvider>
-          <Theme className="flex h-100p">
+          <Theme className="flex">
             <Sidebar />
             <div className="grow">
               <Header />
