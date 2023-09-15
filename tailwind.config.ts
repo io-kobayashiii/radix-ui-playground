@@ -17,6 +17,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'slide-down': {
+          '0%': { height: '0px' },
+          '100%': { height: 'var(--radix-accordion-content-height)' },
+        },
+        'slide-up': {
+          '0%': { height: 'var(--radix-accordion-content-height)' },
+          '100%': { height: '0px' },
+        },
+      },
+      animation: {
+        'slide-down': 'slide-down 0.3s ease',
+        'slide-up': 'slide-up 0.3s ease',
+      },
       scale: {
         flip: '-1',
       },
