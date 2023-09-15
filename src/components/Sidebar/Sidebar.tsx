@@ -1,6 +1,10 @@
 'use client';
 
-import { HomeIcon, GitHubLogoIcon, InputIcon } from '@radix-ui/react-icons';
+import {
+  HomeIcon,
+  GitHubLogoIcon,
+  CrumpledPaperIcon,
+} from '@radix-ui/react-icons';
 import React, { FC } from 'react';
 import { useSidebarRecoilMutator, useSidebarState } from '@/recoil/sidebar';
 import { NavigationItem, NavigationItemProps } from './NavigationItem';
@@ -15,9 +19,9 @@ const navigationItemsData: Omit<NavigationItemProps, 'isCurrent' | 'isOpen'>[] =
       href: '/',
     },
     {
-      Icon: InputIcon,
-      text: 'Form Parts',
-      href: '/form-parts',
+      Icon: CrumpledPaperIcon,
+      text: 'playground',
+      href: '/playground',
     },
   ];
 
