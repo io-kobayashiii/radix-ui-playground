@@ -4,7 +4,7 @@ import { Card } from '@/components/Common/Card';
 import { CardHeading } from '@/components/Common/CardHeading';
 import * as Accordion from '@radix-ui/react-accordion';
 
-export default function Home() {
+export default function Playground() {
   return (
     <Card>
       <CardHeading text={'Accordion'} />
