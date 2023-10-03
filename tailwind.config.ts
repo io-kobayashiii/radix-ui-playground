@@ -26,10 +26,42 @@ const config: Config = {
           '0%': { height: 'var(--radix-accordion-content-height)' },
           '100%': { height: '0px' },
         },
+        'show-overlay': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        'hide-overlay': {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+        'show-content': {
+          '0%': {
+            opacity: '0',
+            transform: 'translate(-50%, -48%) scale(0.96)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translate(-50%, -50%) scale(1)',
+          },
+        },
+        'hide-content': {
+          '0%': {
+            opacity: '1',
+            transform: 'translate(-50%, -50%) scale(1)',
+          },
+          '100%': {
+            opacity: '0',
+            transform: 'translate(-50%, -48%) scale(0.96)',
+          },
+        },
       },
       animation: {
         'slide-down': 'slide-down 0.3s ease',
         'slide-up': 'slide-up 0.3s ease',
+        'show-overlay': 'show-overlay 0.15s ease',
+        'hide-overlay': 'hide-overlay 0.15s ease',
+        'show-content': 'show-content 0.15s ease',
+        'hide-content': 'hide-content 0.15s ease',
       },
       scale: {
         flip: '-1',
