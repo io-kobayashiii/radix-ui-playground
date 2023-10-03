@@ -26,10 +26,26 @@ const config: Config = {
           '0%': { height: 'var(--radix-accordion-content-height)' },
           '100%': { height: '0px' },
         },
+        'overlay-show': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        'content-show': {
+          '0%': {
+            opacity: '0',
+            transform: 'translate(-50%, -48%) scale(0.96)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translate(-50%, -50%) scale(1)',
+          },
+        },
       },
       animation: {
         'slide-down': 'slide-down 0.3s ease',
         'slide-up': 'slide-up 0.3s ease',
+        'overlay-show': 'overlay-show 0.3s ease',
+        'content-show': 'content-show 0.3s ease',
       },
       scale: {
         flip: '-1',
