@@ -4,10 +4,12 @@ import { Card } from '@/components/Common/Card';
 import { CardHeading } from '@/components/Common/CardHeading';
 import * as Accordion from '@radix-ui/react-accordion';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import * as Dialog from '@radix-ui/react-dialog';
 import { useState } from 'react';
 
 export default function Playground() {
   const [isAlertDialogOpen, setIsAlertDialogOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <>
@@ -57,6 +59,28 @@ export default function Playground() {
             </AlertDialog.Content>
           </AlertDialog.Portal>
         </AlertDialog.Root>
+      </Card>
+      <Card className="mt-24">
+        <CardHeading text={'Dialog'} />
+        <Dialog.Root open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <Dialog.Trigger className="mt-24 rounded-8 px-36 py-16 flex justify-center items-center bg-orange-400 text-white">
+            Dialog.Trigger
+          </Dialog.Trigger>
+          <Dialog.Portal>
+            <Dialog.Overlay className="bg-black bg-opacity-30 fixed inset-0 data-[state=open]:animate-show-overlay data-[state=closed]:animate-hide-overlay" />
+            <Dialog.Content className="w-600 bg-white rounded-12 fixed top-50p left-50p translate-x-minus-50p translate-y-minus-50p data-[state=open]:animate-show-content data-[state=closed]:animate-hide-content">
+              <Dialog.Title className="p-24">Dialog.Title</Dialog.Title>
+              <Dialog.Description className="p-24">
+                Dialog.Description
+              </Dialog.Description>
+              <div className="p-24 flex">
+                <Dialog.Close className="bg-gray-200 text-gray-600 p-16 rounded-8 grow">
+                  Dialog.Close
+                </Dialog.Close>
+              </div>
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
       </Card>
     </>
   );
