@@ -5,11 +5,13 @@ import { CardHeading } from '@/components/Common/CardHeading';
 import * as Accordion from '@radix-ui/react-accordion';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import * as Dialog from '@radix-ui/react-dialog';
+import * as Toast from '@radix-ui/react-toast';
 import { useState } from 'react';
 
 export default function Playground() {
   const [isAlertDialogOpen, setIsAlertDialogOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isToastOpen, setIsToastOpen] = useState(false);
 
   return (
     <>
@@ -48,7 +50,7 @@ export default function Playground() {
               <AlertDialog.Description className="p-24">
                 AlertDialog.Description
               </AlertDialog.Description>
-              <div className="p-24 flex gap-[24px] ">
+              <div className="p-24 flex gap-[24px]">
                 <AlertDialog.Cancel className="bg-gray-200 text-gray-600 p-16 rounded-8 grow">
                   AlertDialog.Cancel
                 </AlertDialog.Cancel>
@@ -81,6 +83,39 @@ export default function Playground() {
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>
+      </Card>
+      <Card className="mt-24">
+        <CardHeading text={'Toast'} />
+        <Toast.Provider duration={3000}>
+          <button
+            className="mt-24 rounded-8 px-36 py-16 flex justify-center items-center bg-orange-400 text-white"
+            onClick={() => setIsToastOpen(true)}
+          >
+            BUTTON
+          </button>
+          <Toast.Root
+            open={isToastOpen}
+            onOpenChange={setIsToastOpen}
+            className="shadow-md bg-white rounded-8 p-24 data-[state=open]:animate-slide-toast-in data-[state=closed]:animate-slide-toast-out"
+          >
+            <Toast.Title>Toast.Title</Toast.Title>
+            <Toast.Description className="mt-24">
+              Toast.Description
+            </Toast.Description>
+            <div className="mt-24 flex gap-[24px]">
+              <Toast.Close className="bg-gray-200 text-gray-600 p-16 rounded-8 grow">
+                Toast.Close
+              </Toast.Close>
+              <Toast.Action
+                altText="alt-text"
+                className="bg-orange-400 text-white p-16 rounded-8 grow"
+              >
+                Toast.Action
+              </Toast.Action>
+            </div>
+          </Toast.Root>
+          <Toast.Viewport className="fixed right-24 bottom-24" />
+        </Toast.Provider>
       </Card>
     </>
   );
