@@ -54,6 +54,14 @@ const config: Config = {
             transform: 'translate(-50%, -48%) scale(0.96)',
           },
         },
+        'slide-toast-in': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        'slide-toast-out': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
       animation: {
         'slide-down': 'slide-down 0.3s ease',
@@ -62,6 +70,8 @@ const config: Config = {
         'hide-overlay': 'hide-overlay 0.15s ease',
         'show-content': 'show-content 0.15s ease',
         'hide-content': 'hide-content 0.15s ease',
+        'slide-toast-in': 'slide-toast-in 0.15s ease-out',
+        'slide-toast-out': 'slide-toast-out 0.15s ease-in',
       },
       scale: {
         flip: '-1',
